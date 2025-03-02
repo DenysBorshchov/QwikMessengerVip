@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Установка Qwik Messenger PWA</title>
+    <style>
+        :root {
+            --primary-color: #4a6ee0;
+            --secondary-color: #6c5ce7;
+            --accent-color: #00cec9;
+            --text-color: #2d3436;
+            --light-bg: #f9f9f9;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+        
+        header {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        main {
+            padding: 40px;
+        }
+        
+        .step {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: var(--light-bg);
+            border-radius: 15px;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .step h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-number {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        code {
+            background-color: #e0e0e0;
+            padding: 3px 5px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        
+        .note {
+            background-color: #fdfdca;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #f1c40f;
+        }
+        
+        .note h4 {
+            color: #7d6608;
+            margin-bottom: 10px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(106, 90, 205, 0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(106, 90, 205, 0.6);
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                border-radius: 10px;
+                margin: 10px auto;
+            }
+            
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            main {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Установка Qwik Messenger PWA</h1>
+            <p>Пошаговая инструкция</p>
+        </header>
+        
+        <main>
+            <h2>Инструкция по установке</h2>
+            
+            <div class="step">
+                <h3><span class="step-number">1</span> Скачайте архив с приложением</h3>
+                <p>Скачайте файл <code>qwik-messenger-pwa.zip</code> с сайта.</p>
+                <a href="./qwik-messenger-pwa.zip" class="btn">Скачать ZIP архив</a>
+            </div>
+            
+            <div class="step">
+                <h3><span class="step-number">2</span> Создайте папку для приложения</h3>
+                <p>Создайте папку на вашем компьютере, например <code>C:\QwikMessenger</code>, куда будет установлено приложение.</p>
+            </div>
+            
+            <div class="step">
+                <h3><span class="step-number">3</span> Распакуйте архив</h3>
+                <p>Распакуйте содержимое скачанного ZIP-архива в созданную папку.</p>
+                <ul>
+                    <li>Щелкните правой кнопкой мыши по скачанному файлу</li>
+                    <li>Выберите "Извлечь все..."</li>
+                    <li>Укажите путь к созданной папке</li>
+                    <li>Нажмите "Извлечь"</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h3><span class="step-number">4</span> Запустите PowerShell как администратор</h3>
+                <p>Откройте PowerShell с правами администратора:</p>
+                <ul>
+                    <li>Нажмите Win+X и выберите "Windows PowerShell (администратор)"</li>
+                    <li>Подтвердите запрос на повышение прав</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h3><span class="step-number">5</span> Разрешите выполнение скриптов</h3>
+                <p>Для работы приложения необходимо разрешить выполнение скриптов. Введите команду:</p>
+                <code>Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser</code>
+                <p>При запросе подтверждения введите <code>Y</code> и нажмите Enter.</p>
+            </div>
+            
+            <div class="step">
+                <h3><span class="step-number">6</span> Перейдите в папку приложения</h3>
+                <p>В PowerShell перейдите в папку, где находится приложение:</p>
+                <code>cd C:\QwikMessenger</code>
+                <p>(замените путь на тот, который вы использовали в шаге 2)</p>
+            </div>
+            
+            <div class="step">
+                <h3><span class="step-number">7</span> Запустите приложение</h3>
+                <p>Запустите приложение с помощью скрипта:</p>
+                <code>.\start-app.ps1</code>
+                <p>Если все сделано правильно, скрипт запустит локальный сервер.</p>
+            </div>
+            
+            <div class="step">
+                <h3><span class="step-number">8</span> Откройте приложение в браузере</h3>
+                <p>Откройте браузер и перейдите по адресу <code>http://localhost:3000</code></p>
+            </div>
+            
+            <div class="step">
+                <h3><span class="step-number">9</span> Установите приложение как PWA</h3>
+                <p>В правой части адресной строки должна появиться иконка установки (на разных браузерах может выглядеть по-разному).</p>
+                <ul>
+                    <li>Нажмите на иконку установки</li>
+                    <li>Подтвердите установку</li>
+                    <li>Теперь приложение установлено на вашем компьютере и доступно через меню Пуск</li>
+                </ul>
+            </div>
+            
+            <div class="note">
+                <h4>Примечание: Офлайн-режим</h4>
+                <p>Приложение поддерживает офлайн-режим работы. Если вы отправляете сообщения без подключения к интернету, они будут автоматически синхронизированы, когда подключение восстановится.</p>
+            </div>
+            
+            <div class="note">
+                <h4>Системные требования:</h4>
+                <ul>
+                    <li>Windows 10 или новее</li>
+                    <li>Node.js: <a href="https://nodejs.org/">https://nodejs.org/</a></li>
+                    <li>MongoDB: <a href="https://www.mongodb.com/try/download/community">https://www.mongodb.com/try/download/community</a></li>
+                </ul>
+            </div>
+            
+            <p style="text-align: center; margin-top: 30px;">
+                <a href="./index.html" class="btn">Вернуться на главную</a>
+            </p>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 Qwik Messenger. Все права защищены.</p>
+        </footer>
+    </div>
+</body>
+</html> 
