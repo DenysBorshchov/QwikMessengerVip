@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мобильные приложения Qwik Messenger</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            color: #2c3e50;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        
+        .app-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .app-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .app-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .app-header {
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .android-header {
+            background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+            color: white;
+        }
+        
+        .ios-header {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: white;
+        }
+        
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            background-color: white;
+        }
+        
+        .android-icon {
+            color: #3ddc84;
+        }
+        
+        .ios-icon {
+            color: #007aff;
+        }
+        
+        .app-content {
+            padding: 30px;
+        }
+        
+        h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        
+        .feature-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2ecc71;
+            font-weight: bold;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .cta-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .android-button {
+            background-color: #3ddc84;
+        }
+        
+        .android-button:hover {
+            background-color: #32b36c;
+        }
+        
+        .ios-button {
+            background-color: #007aff;
+        }
+        
+        .ios-button:hover {
+            background-color: #0062cc;
+        }
+        
+        .info-section {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 40px 0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        
+        .requirements {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .requirements {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .req-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .req-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Мобильные приложения Qwik Messenger</h1>
+            <p class="subtitle">Быстрое и безопасное общение на любом устройстве</p>
+        </header>
+        
+        <div class="app-grid">
+            <div class="app-card">
+                <div class="app-header android-header">
+                    <div class="app-icon android-icon">A</div>
+                    <h2>Qwik для Android</h2>
+                </div>
+                <div class="app-content">
+                    <p>Наше приложение для Android обеспечивает быструю и безопасную передачу сообщений с интуитивно понятным интерфейсом.</p>
+                    <ul class="feature-list">
+                        <li>Шифрование сообщений и файлов</li>
+                        <li>Групповые чаты и каналы</li>
+                        <li>Голосовые и видеозвонки</li>
+                        <li>Оптимизированный расход батареи</li>
+                        <li>Темная тема интерфейса</li>
+                    </ul>
+                    <a href="android-qr.html" class="cta-button android-button">Скачать для Android</a>
+                </div>
+            </div>
+            
+            <div class="app-card">
+                <div class="app-header ios-header">
+                    <div class="app-icon ios-icon">i</div>
+                    <h2>Qwik для iOS</h2>
+                </div>
+                <div class="app-content">
+                    <p>Наше приложение для iOS предлагает безупречный пользовательский опыт с акцентом на безопасность и производительность.</p>
+                    <ul class="feature-list">
+                        <li>Сквозное шифрование</li>
+                        <li>Интеграция с iCloud</li>
+                        <li>Поддержка Apple Watch</li>
+                        <li>Совместимость с Face ID и Touch ID</li>
+                        <li>Виджеты для iOS 14+</li>
+                    </ul>
+                    <a href="ios-qr.html" class="cta-button ios-button">Скачать для iOS</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2>Почему мобильное приложение?</h2>
+            <p>Мобильное приложение Qwik Messenger предлагает ряд преимуществ по сравнению с веб-версией:</p>
+            <ul class="feature-list">
+                <li>Повышенная безопасность благодаря локальному хранению данных</li>
+                <li>Уведомления о новых сообщениях в реальном времени</li>
+                <li>Доступ к функциям устройства, таким как камера и микрофон</li>
+                <li>Работа в фоновом режиме</li>
+                <li>Возможность использования без постоянного подключения к интернету</li>
+            </ul>
+        </div>
+        
+        <div class="info-section">
+            <h2>Системные требования</h2>
+            <div class="requirements">
+                <div class="req-card">
+                    <div class="req-title">Android:</div>
+                    <ul>
+                        <li>Android 7.0 (Nougat) или выше</li>
+                        <li>Минимум 100 МБ свободного места</li>
+                        <li>Рекомендуется 2 ГБ оперативной памяти</li>
+                        <li>Для видеозвонков: камера и микрофон</li>
+                    </ul>
+                </div>
+                <div class="req-card">
+                    <div class="req-title">iOS:</div>
+                    <ul>
+                        <li>iOS 13.0 или новее</li>
+                        <li>Совместимо с iPhone, iPad и iPod touch</li>
+                        <li>Минимум 150 МБ свободного места</li>
+                        <li>Для видеозвонков: камера и микрофон</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2>Часто задаваемые вопросы</h2>
+            <div class="req-title">Безопасны ли мои данные в приложении?</div>
+            <p>Да, мы используем сквозное шифрование для всех сообщений и файлов. Ваши данные недоступны третьим лицам, включая нас.</p>
+            
+            <div class="req-title">Как установить приложение на iOS?</div>
+            <p>Для iOS мы используем TestFlight для распространения приложения. Следуйте инструкциям на странице <a href="testflight-instruction.html">установки через TestFlight</a>.</p>
+            
+            <div class="req-title">Могу ли я использовать один аккаунт на нескольких устройствах?</div>
+            <p>Да, вы можете использовать свой аккаунт Qwik Messenger на любом количестве устройств одновременно.</p>
+        </div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR-код для Android</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: #2d3436;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .qr-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+        }
+        
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            border: 15px solid white;
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .qr-pattern {
+            display: grid;
+            grid-template-columns: repeat(21, 1fr);
+            grid-template-rows: repeat(21, 1fr);
+            width: 100%;
+            height: 100%;
+        }
+        
+        .qr-dot {
+            background-color: #3ddc84;
+            border-radius: 1px;
+        }
+        
+        h1 {
+            color: #3ddc84;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            margin-top: 20px;
+            color: #555;
+        }
+        
+        .android-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #3ddc84;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="qr-container">
+        <h1>QR-код для Android</h1>
+        <div class="android-icon">A</div>
+        <div class="qr-code">
+            <div class="qr-pattern" id="qrPattern"></div>
+        </div>
+        <p>Отсканируйте этот QR-код с помощью камеры вашего Android-устройства для загрузки приложения Qwik Messenger</p>
+    </div>
+    
+    <script>
+        // Генерация случайного QR-кода
+        document.addEventListener('DOMContentLoaded', function() {
+            const qrPattern = document.getElementById('qrPattern');
+            
+            // Добавляем фиксированные квадраты позиционирования (характерные для QR-кода)
+            // Верхний левый угол
+            for(let i = 0; i < 7; i++) {
+                for(let j = 0; j < 7; j++) {
+                    const dot = document.createElement('div');
+                    if(i === 0 || i === 6 || j === 0 || j === 6 || (i >= 2 && i <= 4 && j >= 2 && j <= 4)) {
+                        dot.className = 'qr-dot';
+                    }
+                    qrPattern.appendChild(dot);
+                }
+            }
+            
+            // Верхний правый угол
+            for(let i = 0; i < 7; i++) {
+                for(let j = 14; j < 21; j++) {
+                    const dot = document.createElement('div');
+                    if(i === 0 || i === 6 || j === 14 || j === 20 || (i >= 2 && i <= 4 && j >= 16 && j <= 18)) {
+                        dot.className = 'qr-dot';
+                    }
+                    qrPattern.appendChild(dot);
+                }
+            }
+            
+            // Нижний левый угол
+            for(let i = 14; i < 21; i++) {
+                for(let j = 0; j < 7; j++) {
+                    const dot = document.createElement('div');
+                    if(i === 14 || i === 20 || j === 0 || j === 6 || (i >= 16 && i <= 18 && j >= 2 && j <= 4)) {
+                        dot.className = 'qr-dot';
+                    }
+                    qrPattern.appendChild(dot);
+                }
+            }
+            
+            // Заполнение оставшейся части QR-кода случайными точками
+            for(let i = 0; i < 21; i++) {
+                for(let j = 0; j < 21; j++) {
+                    // Пропускаем уже добавленные угловые квадраты
+                    if((i < 7 && j < 7) || (i < 7 && j >= 14) || (i >= 14 && j < 7)) {
+                        continue;
+                    }
+                    
+                    const dot = document.createElement('div');
+                    // Случайное заполнение для имитации QR-кода
+                    if(Math.random() > 0.5) {
+                        dot.className = 'qr-dot';
+                    }
+                    qrPattern.appendChild(dot);
+                }
+            }
+        });
+    </script>
+</body>
+</html> 
